@@ -7,7 +7,8 @@ C++
     Array 
     Stack
     Queue
-    Singly Linked List 
+    Singly Linked List
+    Doubly linked list 
     Tree
     Graph
 
