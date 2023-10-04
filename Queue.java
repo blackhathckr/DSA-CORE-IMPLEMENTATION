@@ -1,3 +1,5 @@
+// DSA - Queue Core Implementation
+
 import java.util.Scanner;
 
 class Q {
