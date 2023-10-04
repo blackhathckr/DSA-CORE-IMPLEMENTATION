@@ -191,7 +191,6 @@ public:
             head=head->next;
             temp->next=nullptr;
         }
-        createHead();
         cout<<"Linked List Cleared"<<endl;
     }
 
@@ -277,5 +276,5 @@ int main()
             cout << "Invalid Option" << endl;
             break;
         }
-    } while (op != 11);
+    } while (op != 12);
 }
