@@ -1,4 +1,4 @@
-// DSA - Singly LinkedList Core Implementation
+// DSA - Singly LinkedList Core Implementation 
 
 #include <iostream>
 using namespace std;
