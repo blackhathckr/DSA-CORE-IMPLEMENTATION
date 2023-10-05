@@ -1,52 +1,52 @@
-// DSA - Queue Core Implementation
+// DSA - Circular Queue Core Implementation
 
 import java.util.Scanner;
 
-class Q {
+class CQ {
     int front, rear, size, capacity;
     int[] queue;
     Scanner s = new Scanner(System.in);
 
-    public Q(int capacity) {
+    public CQ(int capacity) {
         this.front = 0;
         this.capacity = capacity;
         this.rear = capacity - 1;
         this.size = 0;
         queue = new int[capacity];
-        System.out.println("Queue of the Capacity: " + capacity + " Initialized");
+        System.out.println("Circular Queue of the Capacity: " + capacity + " Initialized");
     }
 
     boolean isFull() {
         if (size >= capacity - 1) {
-            System.out.println("Queue is Full");
+            System.out.println("Circular Queue is Full");
             return true;
         } else {
-            System.out.println("Queue is Not Full");
+            System.out.println("Circular Queue is Not Full");
             return false;
         }
     }
 
     boolean isEmpty() {
         if (size == 0) {
-            System.out.println("Queue is Empty");
+            System.out.println("Circular Queue is Empty");
             return true;
         } else {
-            System.out.println("Queue is Not Empty");
+            System.out.println("Circular Queue is Not Empty");
             return false;
         }
     }
 
     void enqueue() {
         if (isFull()) {
-            System.out.println("Enqueue Not Possible. Queue is Full. Increase the Queue Max Capacity ");
+            System.out.println("Enqueue Not Possible. Circular Queue is Full. Increase the Circular Queue Max Capacity ");
         } else {
             int ele;
-            System.out.println("Enter the Element to enqueue");
+            System.out.println("Enter the Element to Enqueue");
             ele = s.nextInt();
             rear = (rear + 1) % capacity;
             queue[rear] = ele;
             size += 1;
-            System.out.println("Element " + ele + " enqueued");
+            System.out.println("Element " + ele + " Enqueued");
         }
     }
 
@@ -62,15 +62,15 @@ class Q {
         }
     }
 
-    void queueFront() {
+    void circularQueueFront() {
         if (isEmpty()) {
             System.out.println(" ");
         } else {
-            System.out.println("Queue Front : " + front);
+            System.out.println("Circular Queue Front : " + front);
         }
     }
 
-    void reverseQueue() {
+    void reverseCircularQueue() {
         if (isEmpty()) {
             System.out.println(" ");
         } else {
@@ -87,7 +87,7 @@ class Q {
         }
     }
 
-    void searchQueue() {
+    void searchCircularQueue() {
         if (isEmpty()) {
             System.out.println(" ");
         } else {
@@ -107,7 +107,7 @@ class Q {
         }
     }
 
-    void queueElementsCount() {
+    void circularQueueElementsCount() {
         if (isEmpty()) {
             System.out.println(" ");
         } else {
@@ -119,7 +119,7 @@ class Q {
         }
     }
 
-    void queueElements() {
+    void circularQueueElements() {
         if (isEmpty()) {
             System.out.println(" ");
         } else {
@@ -130,7 +130,7 @@ class Q {
         }
     }
 
-    void increaseQueueCapacity() {
+    void increaseCircularQueueCapacity() {
         int newCapacity;
         System.out.println("Enter the New Max Capacity of the Queue");
         newCapacity = s.nextInt();
@@ -138,7 +138,7 @@ class Q {
         System.out.println("New Max Capacity of Queue : " + capacity);
     }
 
-    void clearQueue() {
+    void clearCircularQueue() {
         if (isEmpty()) {
             System.out.println(" ");
         } else {
@@ -153,14 +153,14 @@ class Q {
     }
 }
 
-class Queue {
+class Circular_Queue {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int capacity;
-        System.out.println("Enter the Max Capacity of the Queue");
+        System.out.println("Enter the Max Capacity of the Circular Queue");
         capacity = s.nextInt();
-        Q q = new Q(capacity);
-        System.out.println("DSA - Queue Core Implementation");
+        CQ cq = new CQ(capacity);
+        System.out.println("DSA - Circular Queue Core Implementation");
         int op;
         do {
             System.out.println(" ");
@@ -169,60 +169,60 @@ class Queue {
             System.out.println("2.isEmpty");
             System.out.println("3.Enqueue");
             System.out.println("4.Dequeue");
-            System.out.println("5.Queue Front");
-            System.out.println("6.Reverse Queue");
-            System.out.println("7.Search Queue");
-            System.out.println("8.Queue Elements Count");
-            System.out.println("9.Queue Elements");
-            System.out.println("10.Increase Queue Capacity");
-            System.out.println("11.ClearQueue");
+            System.out.println("5.Circular Queue Front");
+            System.out.println("6.Reverse Circular Queue");
+            System.out.println("7.Search Circular Queue");
+            System.out.println("8.Circular Queue Elements Count");
+            System.out.println("9.Circular Queue Elements");
+            System.out.println("10.Increase Circular Queue Capacity");
+            System.out.println("11.Clear Circular Queue");
             System.out.println("12.Exit");
             System.out.println(" ");
             op = s.nextInt();
             System.out.println(" ");
             switch (op) {
                 case 1:
-                    q.isFull();
+                    cq.isFull();
                     break;
 
                 case 2:
-                    q.isEmpty();
+                    cq.isEmpty();
                     break;
 
                 case 3:
-                    q.enqueue();
+                    cq.enqueue();
                     break;
 
                 case 4:
-                    q.dequeue();
+                    cq.dequeue();
                     break;
 
                 case 5:
-                    q.queueFront();
+                    cq.circularQueueFront();
                     break;
 
                 case 6:
-                    q.reverseQueue();
+                    cq.reverseCircularQueue();
                     break;
 
                 case 7:
-                    q.searchQueue();
+                    cq.searchCircularQueue();
                     break;
 
                 case 8:
-                    q.queueElementsCount();
+                    cq.circularQueueElementsCount();
                     break;
 
                 case 9:
-                    q.queueElements();
+                    cq.circularQueueElements();
                     break;
 
                 case 10:
-                    q.increaseQueueCapacity();
+                    cq.increaseCircularQueueCapacity();
                     break;
 
                 case 11:
-                    q.clearQueue();
+                    cq.clearCircularQueue();
                     ;
                     break;
 

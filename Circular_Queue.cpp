@@ -1,32 +1,32 @@
-// DSA - Queue Core Implementation
+// DSA - Circular Queue Core Implementation
 
 #include <iostream>
 using namespace std;
 
-class Queue
+class Circular_Queue
 {
 public:
     int front, rear, capacity, size, queue[];
-    Queue(int capacity)
+    Circular_Queue(int capacity)
     {
         this->front = 0;
         this->capacity = capacity;
-        this->rear = capacity - 1;
+        this->rear = capacity- 1;
         this->size = 0;
         this->queue[this->capacity];
-        cout<<"Queue of Capacity: "<<this->capacity<<" Initialized"<<endl;
+        cout<<"Circular Queue of Capacity: "<<this->capacity<<" Initialized"<<endl;
     }
 
     bool isFull()
     {
         if (size >= capacity-1)
         {
-            cout << "Queue is Full!" << endl;
+            cout << "Circular Queue is Full!" << endl;
             return true;
         }
         else
         {
-            cout << "Queue is not Full!" << endl;
+            cout << "Circular Queue is not Full!" << endl;
             return false;
         }
     }
@@ -35,12 +35,12 @@ public:
     {
         if (size == 0)
         {
-            cout << "Queue is Empty!" << endl;
+            cout << "Circular Queue is Empty!" << endl;
             return true;
         }
         else
         {
-            cout << "Queue is not Empty!" << endl;
+            cout << "Circular Queue is not Empty!" << endl;
             return false;
         }
     }
@@ -91,7 +91,7 @@ public:
         }
     }
 
-    void reverseQueue()
+    void reverseCircularQueue()
     {
         if (isEmpty())
         {
@@ -109,11 +109,11 @@ public:
                 start++;
                 end--;
             }
-            cout << "Queue Reversed" << endl;
+            cout << "Circular Queue Reversed" << endl;
         }
     }
 
-    void searchQueue()
+    void searchCircularQueue()
     {
         if (isEmpty())
         {
@@ -122,25 +122,25 @@ public:
         else
         {
             int ele, flag = 0;
-            cout << "Enter the Element to Search for in the Queue" << endl;
+            cout << "Enter the Element to Search for in the Circular Queue" << endl;
             cin >> ele;
             for (int i = front; i <= rear; i++)
             {
                 if (ele == queue[i])
                 {
-                    cout << "Element " << ele << " Found in the Queue" << endl;
+                    cout << "Element " << ele << " Found in the Circular Queue" << endl;
                     flag++;
                     break;
                 }
             }
             if (flag == 0)
             {
-                cout << "Element " << ele << " Not Found in the Queue" << endl;
+                cout << "Element " << ele << " Not Found in the Circular Queue" << endl;
             }
         }
     }
 
-    void queueElementsCount()
+    void circularQueueElementsCount()
     {
         if (isEmpty())
         {
@@ -153,11 +153,11 @@ public:
             {
                 count++;
             }
-            cout << "Queue Elements Count : " << count << endl;
+            cout << "Circular Queue Elements Count : " << count << endl;
         }
     }
 
-    void queueElements()
+    void circularQueueElements()
     {
         if (isEmpty())
         {
@@ -165,7 +165,7 @@ public:
         }
         else
         {
-            cout<<"Queue Elements"<<endl;
+            cout<<"Circular Queue Elements"<<endl;
             int count = 0;
             for (int i = front; i <= rear; i++)
             {
@@ -174,16 +174,16 @@ public:
         }
     }
 
-    void increaseQueueCapacity()
+    void increaseCircularQueueCapacity()
     {
         int newCapacity;
-        cout << "Enter the New Queue Capacity" << endl;
+        cout << "Enter the New Circular Queue Capacity" << endl;
         cin >> newCapacity;
         this->capacity = newCapacity;
-        cout << "New Queue Max Capacity : " << this->capacity << endl;
+        cout << "New Circular Queue Max Capacity : " << this->capacity << endl;
     }
 
-    void clearQueue()
+    void clearCircularQueue()
     {
         if (isEmpty())
         {
@@ -198,19 +198,19 @@ public:
         }
     }
 
-    ~Queue()
+    ~Circular_Queue()
     {
-        cout << "Queue Destroyed by Destructor" << endl;
+        cout << "Circular Queue Destroyed by Destructor" << endl;
     }
 };
 
 int main()
 {
     int capacity;
-    cout << "Enter the Capacity of the Queue" << endl;
+    cout << "Enter the Capacity of the Circular Queue" << endl;
     cin >> capacity;
-    Queue q(capacity);
-    cout << "DSA - Queue Core Implementation" << endl;
+    Circular_Queue cq(capacity);
+    cout << "DSA - Circular Queue Core Implementation" << endl;
     int op;
     do
     {
@@ -221,59 +221,59 @@ int main()
         cout << "3.Enqueue" << endl;
         cout << "4.Dequeue" << endl;
         cout << "5.Front" << endl;
-        cout << "6.Reverse Queue" << endl;
-        cout << "7.Search Queue" << endl;
-        cout << "8.Queue Elements Count" << endl;
-        cout << "9.Queue Elements" << endl;
-        cout << "10.Increase Queue Capacity" << endl;
-        cout << "11.Clear Queue" << endl;
+        cout << "6.Reverse Circular Queue" << endl;
+        cout << "7.Search Circular Queue" << endl;
+        cout << "8.Circular Queue Elements Count" << endl;
+        cout << "9.Circular Queue Elements" << endl;
+        cout << "10.Increase Circular Queue Capacity" << endl;
+        cout << "11.Clear Circular Queue" << endl;
         cout << "12.Exit" << endl;
         cout << endl;
         cin >> op;
         switch (op)
         {
         case 1:
-            q.isFull();
+            cq.isFull();
             break;
 
         case 2:
-            q.isEmpty();
+            cq.isEmpty();
             break;
 
         case 3:
-            q.enqueue();
+            cq.enqueue();
             break;
 
         case 4:
-            q.dequeue();
+            cq.dequeue();
             break;
 
         case 5:
-            q.Front();
+            cq.Front();
             break;
 
         case 6:
-            q.reverseQueue();
+            cq.reverseCircularQueue();
             break;
 
         case 7:
-            q.searchQueue();
+            cq.searchCircularQueue();
             break;
 
         case 8:
-            q.queueElementsCount();
+            cq.circularQueueElementsCount();
             break;
 
         case 9:
-            q.queueElements();
+            cq.circularQueueElements();
             break;
 
         case 10:
-            q.increaseQueueCapacity();
+            cq.increaseCircularQueueCapacity();
             break;
 
         case 11:
-            q.clearQueue();
+            cq.clearCircularQueue();
             break;
 
         case 12:
