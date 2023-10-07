@@ -6,7 +6,7 @@ C++
     Strings
     Array 
     Stack
-    Queue
+    Circular Queue
     Singly Linked List
     Doubly linked list 
     Tree
@@ -17,4 +17,10 @@ Java
 
 C# ( Csharp )
     Stack
+
+Javascript
+    Linear Queue
+
+PHP
+    Double Ended Queue ( deque )
 
