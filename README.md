@@ -2,7 +2,7 @@ DSA - Core Implementation
 
 Data Structures Implemented - 
 
-C++ 
+C++ -
     Strings
     Array 
     Stack
@@ -12,18 +12,18 @@ C++
     Tree
     Graph
 
-Java 
+Java -
     Queue
 
-C# ( Csharp )
+C# ( Csharp ) -
     Stack
 
-Javascript
+Javascript -
     Linear Queue
 
-PHP
+PHP -
     Double Ended Queue ( deque )
 
-C
+C -
     Priority Queue
 
