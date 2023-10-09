@@ -24,3 +24,6 @@ Javascript
 PHP
     Double Ended Queue ( deque )
 
+C
+    Priority Queue
+

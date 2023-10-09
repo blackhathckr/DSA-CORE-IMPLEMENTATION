@@ -5,6 +5,8 @@
 #include<limits.h>
 #define MAX 1000
 
+// Function Prototyping
+
 bool isFull();
 bool isEmpty();
 void enqueue();
@@ -40,6 +42,7 @@ int main()
     printf("\n");
     switch (op)
     {
+        // Function Calls
     case 1:isFull();
         break;
 
@@ -66,6 +69,9 @@ int main()
     }
    } while (op!=7);
 }
+
+
+// Function Definitions
 
 bool isFull()
 {
